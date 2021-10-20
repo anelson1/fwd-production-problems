@@ -17,30 +17,52 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 }
 #three {
   background-color: purple;
+  order: 3;
 }
 #two {
   background-color: green;
+  order: 2;
 }
 #one {
   background-color: red;
+  order: 1;
 }
 
 
 /* ==== LAYOUT STYLES ==== */
 #content {
+display: flex;
+flex-wrap: wrap;
 
 }
 
 #three,
 #two,
 #one {
-
+width:30vw;
+height: 30vw;
 }
 
 @media screen and (min-width: 600px) {
+  
+#two,
+#one {
+flex-grow: 1;
+}
+#three{
+  flex:0 0 1000px;
+}
+  
 
 }
+  
 
 @media screen and (min-width: 800px) {
+  #content{flex-direction: row;}
+  #three,
+  #two,
+  #one {
+  flex: 1;
+  }
 
 }
