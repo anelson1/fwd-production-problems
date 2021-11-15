@@ -4,15 +4,12 @@
   `x` as the variable inside the function, however.
 */
 
-x = 5;
-
+/*
 function double(num) {
-  x = num * 2;
+  var x = num * 2;
   return x;
 }
-
-double(6);
-console.log('The value of x is', x, '-- it should be 5.');
+*/
 
 /*
   Step 2. Rewrite the JavaScript `double()` function above so that
@@ -23,6 +20,18 @@ console.log('The value of x is', x, '-- it should be 5.');
   Be sure to comment out the original `double()` function so you
   can accurately test your work.
 */
+var doubleObj = {
+x: 2.5,
+double: function(num){
+  if (typeof(num) != "number"){
+    console.log("Input was not a number")
+    return
+  }
+  return num * 2;}
+};
+
+var x = doubleObj.double(doubleObj.x)
+console.log('The value of x is', x, '-- it should be 5.');
 
 
 /*
